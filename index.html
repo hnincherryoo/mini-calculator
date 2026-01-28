@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Calculator</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            padding-top: 50px;
+        }
+
+        .calc-card {
+            border: 2px solid #333;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        input {
+            width: 60px;
+            padding: 10px;
+            margin: 5px;
+            font-size: 1.2em;
+            text-align: center;
+        }
+
+        button {
+            padding: 10px 15px;
+            font-size: 1.1em;
+            cursor: pointer;
+            background-color: aqua;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 1.5em;
+            font-weight: bold;
+            color: aquamarine;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="calc-card">
+        <h2>Mini Calculator</h2>
+
+        <input type="number" id="num1" placeholder="0">
+
+        <select id="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+
+        <input type="number" id="num2" placeholder="0">
+
+        <button onclick="calculate()">တွက်မည်</button>
+
+        <div id="result">ရလဒ်: 0</div>
+    </div>
+    
+</body>
+</html>
