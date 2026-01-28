@@ -71,5 +71,30 @@
         <div id="result">ရလဒ်: 0</div>
     </div>
     
+    <script>
+        function calculate() {
+            let n1 = Number(document.querySelector("#num1").value);
+            let n2 = Number(document.querySelector("#num2").value);
+            let op = document.querySelector("#operator").value;
+            let resElement =  document.querySelector("#result");
+            let answer = 0;
+
+
+            if (op == "+") {
+                answer = n1 + n2;
+            } else if (op == "-") {
+                answer = n1 - n2;
+            } else if (op == "*") {
+                answer = n1 * n2;
+            } else if (op == "/") {
+                answer = n1 / n2;
+            }
+
+            resElement.textContent =  "ရလဒ်: " + answer;
+
+        }
+
+
+    </script>
 </body>
 </html>
