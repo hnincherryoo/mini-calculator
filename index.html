@@ -3,49 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mini Calculator</title>
+    <title>Complete Mini Calculator</title>
     <style>
         body {
             font-family: sans-serif;
             display: flex;
             justify-content: center;
             padding-top: 50px;
+            transition: 1s;
         }
 
-        .calc-card {
-            border: 2px solid #333;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            width: 350px;
         }
-
         input {
-            width: 60px;
+            width: 80px;
             padding: 10px;
-            margin: 5px;
-            font-size: 1.2em;
-            text-align: center;
+            margin: 10px 0;
+            border: 2px solid #eee;
+            border-radius: 8px;
+            font-size: 1.1em;
+
         }
 
+        label {
+            display: none;
+            color: #ff4757;
+            font-size: 0.8em;
+            display: block;
+            height: 15px;
+            margin-bottom: 5px;
+            opacity: 0;
+        }
+
+        .btns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 10px;
+        }
         button {
-            padding: 10px 15px;
-            font-size: 1.1em;
+            padding: 12px ;
             cursor: pointer;
-            background-color: aqua;
+            background: #2f3542;
             color: white;
             border: none;
-            border-radius: 5px;
+            border-radius: 8px;
+            font-size: 1.2em;
+            transition: 0.2s;
         }
+            
+        
 
         button:hover {
-            background-color: #0056b3;
+            background: #0056b3;
+            transform: translateY(-2px);
         }
 
         #result {
             margin-top: 20px;
             font-size: 1.5em;
             font-weight: bold;
+            text-align: center;
             color: aquamarine;
+            transition: 0.3s;
         }
 
 
