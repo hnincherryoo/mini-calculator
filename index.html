@@ -77,49 +77,52 @@
     </style>
 </head>
 <body>
-    <div class="calc-card">
+    <div class="card">
         <h2>Mini Calculator</h2>
 
-        <input type="number" id="num1" placeholder="0">
+        <input type="text" id="a" placeholder="First Number">
+        <label id="errorA">Invalid Number</label>
 
-        <select id="operator">
-            <option value="+">+</option>
-            <option value="-">-</option>
-            <option value="*">*</option>
-            <option value="/">/</option>
-        </select>
+        <input type="text" id="b" placeholder="Second Number">
+        <label id="errorB">Invalid Number</label>
 
-        <input type="number" id="num2" placeholder="0">
+        <div class="btns">
+            <button class="calc-btn" data-action="add">+</button>
+            <button class="calc-btn" data-action="sub">-</button>
+            <button class="calc-btn" data-action="mul">*</button>
+            <button class="calc-btn" data-action="div">/</button>
+        </div>
 
-        <button onclick="calculate()">တွက်မည်</button>
-
-        <div id="result">ရလဒ်: 0</div>
+        <div id="result">0</div>
     </div>
     
     <script>
-        function calculate() {
-            let n1 = Number(document.querySelector("#num1").value);
-            let n2 = Number(document.querySelector("#num2").value);
-            let op = document.querySelector("#operator").value;
-            let resElement =  document.querySelector("#result");
-            let answer = 0;
+        const inputA = document.querySelector("#a");
+        const inputB = document.querySelector("#b");
+        const errorA = document.querySelector("#errorA");
+        const errorB = document.querySelector("#errorB");
+        const resultDiv = document.querySelector("#result");
 
+         // Calculator Buttons အားလုံးကို တစ်ခါတည်း select လုပ်တာပါ
+         const buttons = document.querySelectorAll(".calc-btn");
 
-            if (op == "+") {
-                answer = n1 + n2;
-            } else if (op == "-") {
-                answer = n1 - n2;
-            } else if (op == "*") {
-                answer = n1 * n2;
-            } else if (op == "/") {
-                answer = n1 / n2;
+         buttons.forEach(btn => {
+            btn.onclick = function(){
+                let val1 = parseFloat(inputA.value); //for decimal count
+                let val2 = parseFloat(inputB.value);
+                let action = this.getAttribute("data-action");
+                let hasError = false;
             }
-
-            resElement.textContent =  "ရလဒ်: " + answer;
-
-        }
+         })
 
 
-    </script>
+
+
+
+
+
+
+
+     </script>
 </body>
 </html>
