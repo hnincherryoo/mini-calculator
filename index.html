@@ -112,11 +112,45 @@
                 let val2 = parseFloat(inputB.value);
                 let action = this.getAttribute("data-action");
                 let hasError = false;
+
+            // Error Validation
+            if(isNaN(val1)) {
+                errorA.style.opacity = 1;
+                hasError = true;
+            } else {
+                errorA.style.opacity = 0;
             }
-         })
+
+            if(!hasError) {
+                let res = 0;
+
+                //Switch Case သုံးပြီး ဘယ်ခလုတ်နှိပ်လဲ စစ်တာပါ
+                switch(action) {
+                    case 'add': res = val1 + val2; break;
+                    case 'sub': res = val1 - val2; break;
+                    case 'mul': res = val1 * val2; break;
+                    case 'div': res = val2 !== 0 ? val1 / val2 :"Error (/0)"; break;
+                }
+
+                resultDiv.textContent = res ;
+
+                //Animation effect
+                resultDiv.style.transform = "scale(1.2)";
+                setTimeout(() => resultDiv.style.transform = "scale(1)", 150);
 
 
+            }
 
+            }
+         });
+
+         //Background Color Changer
+         const bgColors = ["#fab1a0", "#74b9ff", "#55efc4", "#a29bfe", "#ffeaa7"]
+         let i = 0;
+         setInterval( () => {
+            document.body.style.backgroundColor = bgColors[i];
+            i = (i+1) % bgColors.length;
+         }, 3000);
 
 
 
